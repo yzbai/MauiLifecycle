@@ -1,0 +1,47 @@
+﻿//Startup
+//1. PlatformApplication启动，构建和初始化容器，创建Application
+[DOTNET] [HB] [PlatformApplication] Construction
+[DOTNET] [HB] [PlatformApplication] OnCreate Begin
+    [DOTNET] [HB] [ServiceContainer] CreateMauiApp. 这里的MauiApp就是一个ServiceContainer。
+    [DOTNET] [HB] [ServiceContainer] 初始化容器 MauiInitializeService.
+    [DOTNET] [HB] [ServiceContainer] 初始化容器Scope MauiInitializeScopedService.
+    [DOTNET] [HB] [Lifecycle-Events] [PlatformApplication] Creating.
+        [DOTNET] [HB] [App] Construction Begin
+        [DOTNET] [HB] [MainPage] AppShell Constructed
+        [DOTNET] [HB] [App] Construction End
+    [DOTNET] [HB] [Lifecycle-Events] [PlatformApplication] Created.
+[DOTNET] [HB] [PlatformApplication] OnCreate End
+
+//2. Activity OnCreate
+[DOTNET] [HB] [Activity] OnCreate Begin
+    [DOTNET] [HB] [App] CreateWindow
+    [DOTNET] [HB] [Window] Construct with page
+[DOTNET] [HB] [Activity] OnCreate End
+
+[DOTNET] [HB] [Lifecycle-Events] [Activity] OnStart
+[DOTNET] [HB] ContentPage Constructed
+
+//3. Activity OnPostCreate
+[DOTNET] [HB] [Activity] OnPostCreate Begin
+    [DOTNET] [HB] [Window] OnCreated Begin
+    [DOTNET] [HB] [Window] OnCreated End
+    [DOTNET] [HB] [App] OnStart Begin
+    [DOTNET] [HB] [App] OnStart End
+    [DOTNET] [HB] [Lifecycle-Events] [Activity] OnPostCreate
+[DOTNET] [HB] [Activity] OnPostCreate End
+
+//4. Activity OnResume
+[DOTNET] [HB] [Activity] OnResume Begin
+    [DOTNET] [HB] [Window] OnActivated Begin
+    [DOTNET] [HB] [Window] OnActivated End
+    [DOTNET] [HB] [Lifecycle-Events] [Activity] OnResume
+[DOTNET] [HB] [Activity] OnResume End
+
+//5. Activity OnPostResume
+[DOTNET] [HB] [Activity] OnPostResume Begin
+    [DOTNET] [HB] [Lifecycle-Events] [Activity] OnPostResume
+[DOTNET] [HB] [Activity] OnPostResume  End
+
+//6. Activity OnAttachToWindow
+[DOTNET] [HB] [Activity] OnAttachToWindow Begin
+[DOTNET] [HB] [Activity] OnAttachToWindow End

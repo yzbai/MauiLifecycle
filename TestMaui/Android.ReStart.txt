@@ -1,0 +1,23 @@
+﻿
+//ReEnter by ICON or taskbar
+
+//1. Activity OnRestart
+[DOTNET] [HB] [Activity] OnRestart  Begin
+    [DOTNET] [HB] [Window] OnResumed Begin
+    [DOTNET] [HB] [Window] OnResumed End
+    [DOTNET] [HB] [App] OnResume Begin
+    [DOTNET] [HB] [App] OnResume End
+[DOTNET] [HB] [Activity] OnRestart  End
+[DOTNET] [HB] [Lifecycle-Events] [Activity] OnStart
+
+//2. Activity OnResume - 同Startup中的OnResume
+[DOTNET] [HB] [Activity] OnResume Begin
+    [DOTNET] [HB] [Window] OnActivated Begin
+    [DOTNET] [HB] [Window] OnActivated End
+    [DOTNET] [HB] [Lifecycle-Events] [Activity] OnResume
+[DOTNET] [HB] [Activity] OnResume End
+
+//3. Activity OnPostResume - 同Startup的OnPostResume
+[DOTNET] [HB] [Activity] OnPostResume Begin
+    [DOTNET] [HB] [Lifecycle-Events] [Activity] OnPostResume
+[DOTNET] [HB] [Activity] OnPostResume  End

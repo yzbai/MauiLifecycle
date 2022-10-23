@@ -1,0 +1,27 @@
+﻿
+//Terminate by taskbar from Activated 当面终结
+//1. Activity OnPause
+[DOTNET] [HB] [Activity] OnPause Begin
+    [DOTNET] [HB] [Window] OnDeactivated Begin
+    [DOTNET] [HB] [Window] OnDeactivated End
+    [DOTNET] [HB] [Lifecycle-Events] [Activity] OnPause
+[DOTNET] [HB] [Activity] OnPause End
+
+//2. Activity OnStop
+[DOTNET] [HB] [Activity] OnStop Begin
+    [DOTNET] [HB] [Window] OnStopped Begin
+    [DOTNET] [HB] [Window] OnStopped End
+    [DOTNET] [HB] [App] OnSleep Begin
+    [DOTNET] [HB] [App] OnSleep End
+    [DOTNET] [HB] [Lifecycle-Events] [Activity] OnStop
+[DOTNET] [HB] [Activity] OnStop End
+
+//3. PlatformApplication OnTrimMemory
+[DOTNET] [HB] [PlatformApplication] OnTrimMemory Begin
+    [DOTNET] [HB] [Lifecycle-Events] [PlatformApplication] LowMemory
+[DOTNET] [HB] [PlatformApplication] OnTrimMemory End
+
+
+//Terminated by taskbar from UnActivated 背面终结
+[DOTNET] [HB] [Activity] OnDestroy  Begin
+[DOTNET] [HB] [Lifecycle-Events] [Activity]  OnDestroy // 好像并不牢靠

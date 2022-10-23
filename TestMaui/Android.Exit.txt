@@ -1,0 +1,34 @@
+﻿
+
+//exit by home
+
+//1. Activity OnPause
+[DOTNET] [HB] [Activity] OnPause Begin
+    [DOTNET] [HB] [Window] OnDeactivated Begin
+    [DOTNET] [HB] [Window] OnDeactivated End
+    [DOTNET] [HB] [Lifecycle-Events] [Activity] OnPause
+[DOTNET] [HB] [Activity] OnPause End
+
+//2. PlatformApplication OnTrimMemory
+[DOTNET] [HB] [PlatformApplication] OnTrimMemory Begin
+    [DOTNET] [HB] [Lifecycle-Events] [PlatformApplication] LowMemory
+[DOTNET] [HB] [PlatformApplication] OnTrimMemory End
+
+//3. Activity OnStop
+[DOTNET] [HB] [Activity] OnStop Begin
+    [DOTNET] [HB] [Window] OnStopped Begin
+    [DOTNET] [HB] [Window] OnStopped End
+    [DOTNET] [HB] [App] OnSleep Begin
+    [DOTNET] [HB] [App] OnSleep End
+    [DOTNET] [HB] [Lifecycle-Events] [Activity] OnStop
+[DOTNET] [HB] [Activity] OnStop End
+
+
+//exit by back button
+[DOTNET] [HB] [Lifecycle-Events] [Activity] OnBackPressed
+[DOTNET] [HB] 同exit by home
+
+
+
+
+
