@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TestMaui.CommonPage1"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="CommonPage1">
+    <VerticalStackLayout VerticalOptions="Center">
+        <Label
+            HorizontalOptions="Center"
+            Text="Welcome to CommonPage 1!"
+            VerticalOptions="Center" />
+
+        <Button Text="Back" Clicked="Button_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>

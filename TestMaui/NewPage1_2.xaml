@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestMaui.NewPage1_2"
+             Title="NewPage1_2">
+    <VerticalStackLayout VerticalOptions="Center">
+        <Label 
+            Text="Welcome to New Page 1-2"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Button Text="Goto Sibling Page 1-1" Clicked="Button_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>

@@ -6,9 +6,21 @@
     xmlns:local="clr-namespace:TestMaui"
     Shell.FlyoutBehavior="Disabled">
 
+    <TabBar>
+        <ShellContent
+        Title="NewPage1"
+        ContentTemplate="{DataTemplate local:NewPage1}"
+        Route="NewPage1" />
+
     <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Title="NewPage2"
+        ContentTemplate="{DataTemplate local:NewPage2}"
+        Route="NewPage2" />
+
+    <ShellContent
+        Title="NewPage3"
+        ContentTemplate="{DataTemplate local:NewPage3}"
+        Route="NewPage3" />
+    </TabBar>
 
 </Shell>

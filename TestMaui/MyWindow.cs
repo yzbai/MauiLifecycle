@@ -1,18 +1,12 @@
-﻿namespace TestMaui;
+﻿using System.Text.Json;
+
+namespace TestMaui;
 
 public class MyWindow : Window
 {
     public MyWindow()
     {
-        Backgrounding += MyWindow_Backgrounding;
-
-        
         Console.WriteLine("[HB] [Window] Construct");
-    }
-
-    private void MyWindow_Backgrounding(object sender, BackgroundingEventArgs e)
-    {
-        Console.WriteLine("[HB] [Window] Backgrounding");
     }
 
     public MyWindow(Page page) : base(page)
@@ -25,6 +19,17 @@ public class MyWindow : Window
         Console.WriteLine("[HB] [Window] OnCreated Begin");
         base.OnCreated();
         Console.WriteLine("[HB] [Window] OnCreated End");
+
+        Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
+    }
+
+    protected override void OnResumed()
+    {
+        Console.WriteLine("[HB] [Window] OnResumed Begin");
+        base.OnResumed();
+        Console.WriteLine("[HB] [Window] OnResumed End");
+
+        Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
     }
 
     protected override void OnActivated()
@@ -46,14 +51,12 @@ public class MyWindow : Window
         Console.WriteLine("[HB] [Window] OnStopped Begin");
         base.OnStopped();
         Console.WriteLine("[HB] [Window] OnStopped End");
+
+        Connectivity.ConnectivityChanged -= Connectivity_ConnectivityChanged;
     }
 
-    protected override void OnResumed()
-    {
-        Console.WriteLine("[HB] [Window] OnResumed Begin");
-        base.OnResumed();
-        Console.WriteLine("[HB] [Window] OnResumed End");
-    }
+
+
 
     protected override void OnDestroying()
     {
@@ -67,5 +70,10 @@ public class MyWindow : Window
         Console.WriteLine("[HB] [Window] OnBackgrounding Begin");
         base.OnBackgrounding(state);
         Console.WriteLine("[HB] [Window] OnBackgrounding End");
+    }
+
+    private void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
+    {
+        Console.WriteLine("[HB] [Connectivity] ConnectivityChanged : " + JsonSerializer.Serialize(e));
     }
 }
