@@ -126,6 +126,7 @@ public partial class CommonPage1 : ContentPage
 
     private async void Button_Clicked(object sender, EventArgs e)
     {
-        await Shell.Current.Navigation.PopModalAsync();
+        //await Shell.Current.Navigation.PopModalAsync();
+        await Shell.Current.GoToAsync("..");
     }
 }

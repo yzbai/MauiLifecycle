@@ -25,6 +25,10 @@ public partial class App : Application
         this.ModalPushed += App_ModalPushed;
         this.ModalPopping += App_ModalPopping;
         this.ModalPopped += App_ModalPopped;
+
+
+
+        Console.WriteLine($"[HB] [Connectivity] {Connectivity.Current.NetworkAccess}");
     }
 
     private void App_ModalPopping(object sender, ModalPoppingEventArgs e)

@@ -20,6 +20,8 @@ public class MyWindow : Window
         base.OnCreated();
         Console.WriteLine("[HB] [Window] OnCreated End");
 
+        //TODO: 放到App中比较合适，因为网络状态变化是针对整个App的，而不是某个window
+        //初始状态不会触发
         Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
     }
 
